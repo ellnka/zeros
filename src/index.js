@@ -25,15 +25,14 @@ function countK(k, n, step) {
   for (let i = n; i > 1; i -= step) {
     switch (k) {
       case 2:
-        result += i % 2 === 0 ? i / 2 : 0;
+        result += (i % 2 === 0) ? i / 2 : 0;
         break;
       case 5:
-        result += i % 5 === 0 && i % 10 !== 0 ? 1 : 0;
-        result += i / 5 % 5 === 0 && i % 10 !== 0 ? 1 : 0;
+        result += (i % 5 === 0) ? 1 : 0;
+        result += (((i / 5) % 5 === 0) && (i % 10 !== 0)) ? 1 : 0;
         break;
-      case 10:
-        result += i % 10 === 0 ? 1 : 0;
-        result += i % 50 === 0 ? 1 : 0;
+      default:
+        result += (i % 50 === 0) ? 1 : 0;
         break;
     }
   }
